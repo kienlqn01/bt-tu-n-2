@@ -1,0 +1,6 @@
+a = [int(x) for x in input("Nhập các phần tử của mảng (cách nhau bởi dấu cách): ").split()]
+
+a.sort()
+
+print("Mảng sau khi sắp xếp theo thứ tự không giảm là:")
+print(a)
