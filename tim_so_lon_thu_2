@@ -1,0 +1,19 @@
+def tim_so_lon_thu_hai_for(arr):
+    if len(arr) < 2:
+        return None  # Nếu mảng có ít hơn 2 phần tử, không có số lớn thứ nhì
+    max1 = max2 = float('-inf')  # Đặt 2 biến để lưu số lớn nhất và lớn thứ nhì
+    for num in arr:
+        if num > max1:
+            max2 = max1
+            max1 = num
+        elif num > max2 and num != max1:
+            max2 = num
+    return max2 if max2 != float('-inf') else None
+
+arr = [int(x) for x in input("Nhập các phần tử của mảng (cách nhau bởi dấu cách): ").split()]
+
+so_lon_thu_hai = tim_so_lon_thu_hai_for(arr)
+if so_lon_thu_hai is not None:
+    print(f"Số lớn thứ nhì trong mảng là: {so_lon_thu_hai}")
+else:
+    print("Mảng không có số lớn thứ nhì.")
